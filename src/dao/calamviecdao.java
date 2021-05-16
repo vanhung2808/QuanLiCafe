@@ -12,16 +12,17 @@ public class calamviecdao {
 	public ArrayList<calamviecbean> getcalv() throws Exception{
 		dc.KetNoi();
 		ArrayList<calamviecbean> ds= new ArrayList<calamviecbean>();
-		String sql= "select * from quanlicalamviec";
+		String sql= "select * from calamviec";
 		PreparedStatement cmd=dc.cn.prepareStatement(sql);
 		ResultSet rs= cmd.executeQuery();
 		while(rs.next()) {
-			Integer stt = rs.getInt("STT");
-			String hoTen=rs.getString("HoTen");
+			Date ngaylamviec = rs.getDate("Ngay");
+			String manv = rs.getString("MaNV");
+			String hoTen=rs.getString("TenNV");
 			String checkin = rs.getString("GioCheckIn");
 			String checkout = rs.getString("GioCheckOut");
 			String ghichu = rs.getString("GhiChu");
-			calamviecbean calv = new calamviecbean(stt, hoTen, checkin, checkout, ghichu);
+			calamviecbean calv = new calamviecbean(ngaylamviec, manv,hoTen, checkin, checkout, ghichu);
 			ds.add(calv);
 		}
 		rs.close();

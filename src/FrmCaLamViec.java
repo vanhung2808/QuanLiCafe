@@ -49,7 +49,7 @@ public class FrmCaLamViec extends JFrame {
 			public void windowOpened(WindowEvent arg0) {
 				try {
 					clvbo.getclv();
-					table.setModel(clvbo.napbang("quanlicalamviec"));
+					table.setModel(clvbo.napbang("calamviec"));
 					
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -1,7 +1,9 @@
 package bean;
+import java.util.Date;
 
 public class calamviecbean {
-	private Integer STT;
+	private Date Ngay;
+	private String MaNV;
 	private String HoTen;
 	private String Checkin;
 	private String Checkout;
@@ -10,20 +12,37 @@ public class calamviecbean {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public calamviecbean(Integer sTT, String hoTen, String checkin, String checkout, String ghiChu) {
+	
+	
+
+	
+	public calamviecbean(Date ngay, String maNV, String hoTen, String checkin, String checkout, String ghiChu) {
 		super();
-		STT = sTT;
+		Ngay = ngay;
+		MaNV = maNV;
 		HoTen = hoTen;
 		Checkin = checkin;
 		Checkout = checkout;
 		GhiChu = ghiChu;
 	}
-	public Integer getSTT() {
-		return STT;
+
+	public String getMaNV() {
+		return MaNV;
 	}
-	public void setSTT(Integer sTT) {
-		STT = sTT;
+
+
+	public void setMaNV(String maNV) {
+		MaNV = maNV;
 	}
+
+	public Date getNgay() {
+		return Ngay;
+	}
+
+	public void setNgay(Date ngay) {
+		Ngay = ngay;
+	}
+
 	public String getHoTen() {
 		return HoTen;
 	}
