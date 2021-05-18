@@ -1,3 +1,4 @@
+package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.WindowAdapter;
@@ -91,7 +92,7 @@ public class FrmThucDon extends JFrame {
 		contentPane.add(jTab);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		jTab.addTab("New tab", null, scrollPane, null);
+		jTab.addTab("Thực đơn", null, scrollPane, null);
 		
 		table = new JTable();
 		table.addMouseListener(new MouseAdapter() {
@@ -147,9 +148,11 @@ public class FrmThucDon extends JFrame {
 					Integer gia = Integer.parseInt(etGIA.getText());
 					Double giamGia = Double.parseDouble(etGiamGia.getText());
 					dc.KetNoi();
-					
+					int t=JOptionPane.showConfirmDialog(null, "Are you sure?");
+					if(t==0) {
 						tdbo.them( tenMH, gia, giamGia);
 						table.setModel(tdbo.napbang("thucdon"));
+					}
 					
 				}catch (Exception e2) {
 					e2.printStackTrace();
@@ -173,8 +176,11 @@ public class FrmThucDon extends JFrame {
 //						JOptionPane.showMessageDialog(null, "Đã có nhân viên này");
 //					}
 //					else {
+					int t=JOptionPane.showConfirmDialog(null, "Are you sure?");
+					if(t==0) {
 					tdbo.sua( tenMH, gia, giamGia);
 					table.setModel(tdbo.napbang("thucdon"));
+					}
 					//}	
 					
 				}catch (Exception e2) {

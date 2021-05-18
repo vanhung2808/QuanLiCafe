@@ -12,7 +12,6 @@ public class nhanvienbean {
 	private Long Luong;
 	public nhanvienbean() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public nhanvienbean( String maNV, String hoTen, String gioiTinh, Date ngaySinh, String sDT, String diaChi,
 			Date ngayBDLV, Long luong) {
@@ -77,7 +76,4 @@ public class nhanvienbean {
 		Luong = luong;
 	}
 	
-	
-	
-
 }

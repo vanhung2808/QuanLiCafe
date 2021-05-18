@@ -1,3 +1,4 @@
+package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.WindowAdapter;
@@ -217,8 +218,11 @@ public class FrmNhanVien extends JFrame {
 					Long luong = Long.parseLong(etLuong.getText());
 					dc.KetNoi();
 					if(!kiemtra(manv).next()) {
+						int t=JOptionPane.showConfirmDialog(null, "Are you sure?");
+						if(t==0) {
 						nvbo.them( manv, hoten, gioitinh, ngaySinh, sdt, diachi, ngaylamviec, luong);
 						table.setModel(nvbo.napbang("nhanvien"));
+						}
 						
 					}
 					else {
@@ -239,7 +243,7 @@ public class FrmNhanVien extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				try {
-
+					
 					String manv = etMNV.getText();
 					String hoten = etHT.getText();
 					String gioitinh = etGT.getText();
@@ -253,8 +257,11 @@ public class FrmNhanVien extends JFrame {
 						JOptionPane.showMessageDialog(null, "Đã có nhân viên này");
 					}
 					else {
+						int t=JOptionPane.showConfirmDialog(null, "Are you sure?");
+						if(t==0) {
 						nvbo.sua( manv, hoten, gioitinh, ngaySinh, sdt, diachi, ngaylamviec, luong);
 						table.setModel(nvbo.napbang("nhanvien"));
+						}
 					}	
 					
 				}catch (Exception e) {
@@ -353,7 +360,7 @@ public class FrmNhanVien extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(556, 239, 97, 25);
+		btnNewButton.setBounds(552, 244, 97, 25);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_10 = new JLabel("DANH SÁCH NHÂN VIÊN");

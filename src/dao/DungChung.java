@@ -14,12 +14,10 @@ public class DungChung {
 	public void KetNoi() throws Exception{
 		//b1: Xác định HQTCSDL
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		//System.out.println("Da xac dinh HQTCSDL");
 		//b2: ket noi vao csdl
 		String url="jdbc:sqlserver://DESKTOP-2V1GMRG:1433;databaseName=QUAN_LI_CAFE;\r\n" + 
 				"user=sa; password=123456";
 		cn=DriverManager.getConnection(url);
-		//System.out.println("Da ket noi");
 	}
 	public ResultSet getbang(String tb) throws Exception{
 		//tao cau lenh sql
